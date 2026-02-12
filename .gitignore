@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+
+# Selenium / browser drivers (if you store them)
+chromedriver
+geckodriver
+
+# pytest cache
+.pytest_cache/
+
+# OS
+.DS_Store
+Thumbs.db

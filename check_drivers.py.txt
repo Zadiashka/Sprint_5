@@ -1,0 +1,31 @@
+import os
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.firefox.service import Service as FirefoxService
+
+chrome_path = os.path.join(os.getcwd(), 'drivers', 'chromedriver.exe')
+firefox_path = os.path.join(os.getcwd(), 'drivers', 'geckodriver.exe')
+
+# Проверка ChromeDriver
+try:
+    chrome_service = ChromeService(chrome_path)
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_argument('--headless=new')
+    driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
+    driver.get('https://example.com')
+    print('Chrome OK, title:', driver.title)
+    driver.quit()
+except Exception as e:
+    print('Chrome error:', e)
+
+# Проверка GeckoDriver
+try:
+    firefox_service = FirefoxService(firefox_path)
+    firefox_options = webdriver.FirefoxOptions()
+    firefox_options.add_argument('-headless')
+    driver = webdriver.Firefox(service=firefox_service, options=firefox_options)
+    driver.get('https://example.com')
+    print('Firefox OK, title:', driver.title)
+    driver.quit()
+except Exception as e:
+    print('Firefox error:', e)
