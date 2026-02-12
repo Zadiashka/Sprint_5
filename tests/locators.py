@@ -10,15 +10,15 @@ LOGO = "div[class*='header__logo'] a"  # Логотип Stellar Burgers
 
 # Регистрация / форма
 REGISTER_LINK = "a[href='/register']"  # Ссылка на страницу регистрации
-REG_NAME_INPUT = "input[name='name']"  # Поле "Имя"
-REG_EMAIL_INPUT = "div input[name='name']"  # Поле "Email"
-REG_PASSWORD_INPUT = "//label[text()='Пароль']/following-sibling::input"  # Поле "Пароль"
+REG_NAME_INPUT = "//input[@name='name']"  # Поле "Имя"
+REG_EMAIL_INPUT = "//input[@name='email']"  # Поле "Email"
+REG_PASSWORD_INPUT = "//input[@name='password']"  # Поле "Пароль"
 REG_SUBMIT_BUTTON = "//button[text()='Зарегистрироваться']"  # Кнопка "Зарегистрироваться" в форме регистрации
 REG_LOGIN_LINK = "a[href='/login']"  # Ссылка "Войти" в форме регистрации
 
 # Вход / форма логина
-LOGIN_EMAIL_INPUT = "//label[text()='Email']/following-sibling::input"  # Поле email в форме входа
-LOGIN_PASSWORD_INPUT = "//label[text()='Пароль']/following-sibling::input"  # Поле пароль в форме входа
+LOGIN_EMAIL_INPUT = "//input[@name='email']"  # Поле email в форме входа
+LOGIN_PASSWORD_INPUT = "//input[@name='password']"  # Поле пароль в форме входа
 LOGIN_SUBMIT_BUTTON = "//button[text()='Войти']"  # Кнопка "Войти" в форме логина
 LOGIN_FROM_RECOVERY_BUTTON = "a[href='/forgot-password']"  # Кнопка входа из формы восстановления (пример)
 

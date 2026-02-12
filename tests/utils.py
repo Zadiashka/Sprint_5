@@ -5,7 +5,7 @@ from selenium.common.exceptions import WebDriverException, ElementClickIntercept
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 
-BASE_URL = "https://stellarburgers.nomoreparties.site"
+BASE_URL = "https://stellarburgers.education-services.ru"
 
 def new_chrome(headless=False):
     options = Options()
