@@ -1,42 +1,28 @@
-# locators.py
+# tests/locators.py
 
-# Главная страница
-HOME_LOGIN_BUTTON = "a[href='/account']"  # Кнопка "Войти в аккаунт" на главной
+# Login / Registration
+NAME_INPUT = "//label[text()='Имя']/following-sibling::input"
+EMAIL_INPUT = "//label[text()='Email']/following-sibling::input"
+PASSWORD_INPUT = "//label[text()='Пароль']/following-sibling::input"
+REGISTER_BUTTON = "//button[text()='Зарегистрироваться']"
+LOGIN_BUTTON = "//button[text()='Войти']"
 
-# Навигация
-NAV_PERSONAL_ACCOUNT = "a[href='/account']"  # Ссылка "Личный кабинет" в шапке
-NAV_CONSTRUCTOR = "a[href='/']"  # Ссылка "Конструктор" 
-LOGO = "div[class*='header__logo'] a"  # Логотип Stellar Burgers
+# Account / Profile / Navigation
+ACCOUNT_LINK_CSS = "a[href='/account']"
+ACCOUNT_PROFILE_LINK_CSS = "a[href='/account/profile'][aria-current='page']"
+ACCOUNT_NAV_CSS = "nav.Account_nav__Lgali"
+REGISTER_LINK_CSS = "a[href='/register']"
+LOGIN_LINK_CSS = "a[href='/login']"
+FORGOT_PASSWORD_URL_PART = "/forgot-password"
+LOGOUT_BUTTON = "//button[text()='Выход']"
 
-# Регистрация / форма
-REGISTER_LINK = "a[href='/register']"  # Ссылка на страницу регистрации
-REG_NAME_INPUT = "//input[@name='name']"  # Поле "Имя"
-REG_EMAIL_INPUT = "//input[@name='email']"  # Поле "Email"
-REG_PASSWORD_INPUT = "//input[@name='password']"  # Поле "Пароль"
-REG_SUBMIT_BUTTON = "//button[text()='Зарегистрироваться']"  # Кнопка "Зарегистрироваться" в форме регистрации
-REG_LOGIN_LINK = "a[href='/login']"  # Ссылка "Войти" в форме регистрации
-
-# Вход / форма логина
-LOGIN_EMAIL_INPUT = "//input[@name='email']"  # Поле email в форме входа
-LOGIN_PASSWORD_INPUT = "//input[@name='password']"  # Поле пароль в форме входа
-LOGIN_SUBMIT_BUTTON = "//button[text()='Войти']"  # Кнопка "Войти" в форме логина
-LOGIN_FROM_RECOVERY_BUTTON = "a[href='/forgot-password']"  # Кнопка входа из формы восстановления (пример)
-
-# Восстановление пароля
-RECOVERY_LINK = "a[href='/forgot-password']"  # Ссылка "Восстановить пароль"
-RECOVERY_EMAIL_INPUT = "//label[text()='Email']/following-sibling::input"  # Поле email в форме восстановления
-RECOVERY_SUBMIT_BUTTON = "//button[text()='Восстановить']"  # Кнопка "Восстановить"
-
-# Личный кабинет
-PROFILE_HEADER = "a[href='/account/profile'][aria-current='page']"  # Заголовок страницы "Профиль"
-LOGOUT_BUTTON = "//button[text()='Выход']"  # Кнопка "Выйти" в личном кабинете
-PROFILE_CONSTRUCTOR_LINK = "//a[@href='/' and .//p[text()='Конструктор']]"  # Ссылка "Конструктор" в личном кабинете
-
-# Конструктор — вкладки
-TAB_BUNS = "//span[text()='Булки']/parent::div"  # Вкладка "Булки"
-TAB_SAUCES = "//span[text()='Соусы']/parent::div"  # Вкладка "Соусы"
-TAB_FILLINGS = "//span[text()='Начинки']/parent::div"  # Вкладка "Начинки"
-
-# Сообщения об ошибках
-ERROR_PASSWORD = ".input__error"  # Сообщение об ошибке пароля (элемента нет на странице)
-
+# Constructor
+BUNS_TAB = "//span[text()='Булки']/parent::*"
+SAUCES_TAB = "//span[text()='Соусы']/parent::*"
+FILLINGS_TAB = "//span[text()='Начинки']/parent::*"
+BUNS_HEADER = "//h2[text()='Булки']"
+SAUCES_HEADER = "//h2[text()='Соусы']"
+FILLINGS_HEADER = "//h2[text()='Начинки']"
+CONSTRUCTOR_LINK = "//a[@href='/' and .//p[text()='Конструктор']]"
+HEADER_LOGO_CSS = "div[class*='header__logo'] a"
+PAGE_SOURCE_CONSTRUCTOR_TEXT = "Соберите бургер"
