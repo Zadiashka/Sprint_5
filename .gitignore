@@ -21,3 +21,4 @@ geckodriver
 # OS
 .DS_Store
 Thumbs.db
+drivers/

@@ -1,42 +1,54 @@
-# locators.py
+# tests/locators.py
 
-# Главная страница
-HOME_LOGIN_BUTTON = "a[href='/account']"  # Кнопка "Войти в аккаунт" на главной
+# Поля
+NAME_INPUT = "//label[normalize-space()='Имя']/following-sibling::input"
+EMAIL_INPUT = "//label[normalize-space()='Email']/following-sibling::input"
+PASSWORD_INPUT = "//label[normalize-space()='Пароль']/following-sibling::input"
 
-# Навигация
-NAV_PERSONAL_ACCOUNT = "a[href='/account']"  # Ссылка "Личный кабинет" в шапке
-NAV_CONSTRUCTOR = "a[href='/']"  # Ссылка "Конструктор" 
-LOGO = "div[class*='header__logo'] a"  # Логотип Stellar Burgers
+# Кнопки / ссылки
+LOGIN_BUTTON = "//button[normalize-space()='Войти']"
+REGISTER_BUTTON = "//button[normalize-space()='Зарегистрироваться']"
 
-# Регистрация / форма
-REGISTER_LINK = "a[href='/register']"  # Ссылка на страницу регистрации
-REG_NAME_INPUT = "input[name='name']"  # Поле "Имя"
-REG_EMAIL_INPUT = "div input[name='name']"  # Поле "Email"
-REG_PASSWORD_INPUT = "//label[text()='Пароль']/following-sibling::input"  # Поле "Пароль"
-REG_SUBMIT_BUTTON = "//button[text()='Зарегистрироваться']"  # Кнопка "Зарегистрироваться" в форме регистрации
-REG_LOGIN_LINK = "a[href='/login']"  # Ссылка "Войти" в форме регистрации
+# Ссылки (CSS и запасные XPath)
+REGISTER_LINK_CSS = "a[href='/register']"
+REGISTER_LINK_XPATH = "//a[normalize-space()='Зарегистрироваться']"
 
-# Вход / форма логина
-LOGIN_EMAIL_INPUT = "//label[text()='Email']/following-sibling::input"  # Поле email в форме входа
-LOGIN_PASSWORD_INPUT = "//label[text()='Пароль']/following-sibling::input"  # Поле пароль в форме входа
-LOGIN_SUBMIT_BUTTON = "//button[text()='Войти']"  # Кнопка "Войти" в форме логина
-LOGIN_FROM_RECOVERY_BUTTON = "a[href='/forgot-password']"  # Кнопка входа из формы восстановления (пример)
+LOGIN_LINK_CSS = "a[href='/login']"
+LOGIN_LINK_XPATH = "//a[normalize-space()='Войти' and contains(@href,'/login')]"
 
-# Восстановление пароля
-RECOVERY_LINK = "a[href='/forgot-password']"  # Ссылка "Восстановить пароль"
-RECOVERY_EMAIL_INPUT = "//label[text()='Email']/following-sibling::input"  # Поле email в форме восстановления
-RECOVERY_SUBMIT_BUTTON = "//button[text()='Восстановить']"  # Кнопка "Восстановить"
+FORGOT_PASSWORD_LINK_CSS = "a[href='/forgot-password']"
 
-# Личный кабинет
-PROFILE_HEADER = "a[href='/account/profile'][aria-current='page']"  # Заголовок страницы "Профиль"
-LOGOUT_BUTTON = "//button[text()='Выход']"  # Кнопка "Выйти" в личном кабинете
-PROFILE_CONSTRUCTOR_LINK = "//a[@href='/' and .//p[text()='Конструктор']]"  # Ссылка "Конструктор" в личном кабинете
+# Навигация / аккаунт
+ACCOUNT_LINK_CSS = "a[href='/account']"
+ACCOUNT_PROFILE_LINK_CSS = "a[href='/account/profile']"
+ORDER_HISTORY_LINK_CSS = "a[href='/account/order-history']"
 
-# Конструктор — вкладки
-TAB_BUNS = "//span[text()='Булки']/parent::div"  # Вкладка "Булки"
-TAB_SAUCES = "//span[text()='Соусы']/parent::div"  # Вкладка "Соусы"
-TAB_FILLINGS = "//span[text()='Начинки']/parent::div"  # Вкладка "Начинки"
+# Навигация аккаунта 
+ACCOUNT_NAV_CSS = "nav"
 
-# Сообщения об ошибках
-ERROR_PASSWORD = ".input__error"  # Сообщение об ошибке пароля (элемента нет на странице)
+# Кнопка выхода 
+LOGOUT_BUTTON = "//button[normalize-space()='Выход']"
 
+# Конструктор (главная)
+CONSTRUCTOR_LINK = "//a[@href='/' and .//p[normalize-space()='Конструктор']]"
+
+# Текст, который ожидаем в page_source для страницы конструктора
+PAGE_SOURCE_CONSTRUCTOR_TEXT = "Соберите бургер"
+
+# Логотип в шапке 
+HEADER_LOGO_CSS = "a[href='/']"
+
+# Вкладки конструктора 
+BUNS_TAB = "//div[contains(@class,'tab_tab__1SPyG') and .//span[normalize-space()='Булки']]"
+SAUCES_TAB = "//div[contains(@class,'tab_tab__1SPyG') and .//span[normalize-space()='Соусы']]"
+FILLINGS_TAB = "//div[contains(@class,'tab_tab__1SPyG') and .//span[normalize-space()='Начинки']]"
+
+# Активная вкладка 
+BUNS_TAB_ACTIVE = "//div[contains(@class,'tab_tab_type_current__2BEPc') and .//span[normalize-space()='Булки']]"
+SAUCES_TAB_ACTIVE = "//div[contains(@class,'tab_tab_type_current__2BEPc') and .//span[normalize-space()='Соусы']]"
+FILLINGS_TAB_ACTIVE = "//div[contains(@class,'tab_tab_type_current__2BEPc') and .//span[normalize-space()='Начинки']]"
+
+# Заголовки секций конструктора 
+BUNS_HEADER = "//h2[normalize-space()='Булки'] | //div[normalize-space()='Булки'] | //p[normalize-space()='Булки'] | //span[normalize-space()='Булки']"
+SAUCES_HEADER = "//h2[normalize-space()='Соусы'] | //div[normalize-space()='Соусы'] | //p[normalize-space()='Соусы'] | //span[normalize-space()='Соусы']"
+FILLINGS_HEADER = "//h2[normalize-space()='Начинки'] | //div[normalize-space()='Начинки'] | //p[normalize-space()='Начинки'] | //span[normalize-space()='Начинки']"
